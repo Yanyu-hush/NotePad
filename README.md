@@ -84,14 +84,14 @@ README 文档：笔记应用功能概述
         }
     }
 
-    private void showAllNotes() {
-    Cursor cursor = managedQuery(
-    getIntent().getData(),
-    PROJECTION,
-    null,
-    null,
-    NotePad.Notes.DEFAULT_SORT_ORDER
-    );
+       private void showAllNotes() {
+       Cursor cursor = managedQuery(
+       getIntent().getData(),
+       PROJECTION,
+       null,
+       null,
+       NotePad.Notes.DEFAULT_SORT_ORDER
+       );
 
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(
                 this,
@@ -132,21 +132,21 @@ README 文档：笔记应用功能概述
    每条笔记都显示两个时间戳：
    创建时间戳：记录笔记创建的时间。
    修改时间戳：记录笔记最后被修改的时间。
-   private static final String[] PROJECTION = new String[] {
-   NotePad.Notes._ID, // 0
-   NotePad.Notes.COLUMN_NAME_TITLE, // 1
-   NotePad.Notes.COLUMN_NAME_CREATE_DATE, // 2
-   NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 3
+      private static final String[] PROJECTION = new String[] {
+      NotePad.Notes._ID, // 0
+      NotePad.Notes.COLUMN_NAME_TITLE, // 1
+      NotePad.Notes.COLUMN_NAME_CREATE_DATE, // 2
+      NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 3
    };
 
-   /** The index of the title column */
-   private static final int COLUMN_INDEX_TITLE = 1;
-   private static final int COLUMN_INDEX_CREATE_DATE = 2;
-   private static final int COLUMN_INDEX_MODIFICATION_DATE = 3;
+      /** The index of the title column */
+         private static final int COLUMN_INDEX_TITLE = 1;
+      private static final int COLUMN_INDEX_CREATE_DATE = 2;
+      private static final int COLUMN_INDEX_MODIFICATION_DATE = 3;
 
-   /**
-    * onCreate is called when Android starts this Activity from scratch.
-      */
+      /**
+       * onCreate is called when Android starts this Activity from scratch.
+         */
       @Override
       protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
@@ -161,11 +161,11 @@ README 文档：笔记应用功能概述
           // Gets the intent that started this Activity.
           Intent intent = getIntent();
 
-      // If there is no data associated with the Intent, sets the data to the default URI, which
-      // accesses a list of notes.
-      if (intent.getData() == null) {
-      intent.setData(NotePad.Notes.CONTENT_URI);
-      }
+         // If there is no data associated with the Intent, sets the data to the default URI, which
+         // accesses a list of notes.
+         if (intent.getData() == null) {
+         intent.setData(NotePad.Notes.CONTENT_URI);
+         }
 
       /*
         * Sets the callback for context menu activation for the ListView. The listener is set
@@ -212,11 +212,11 @@ README 文档：笔记应用功能概述
         };
 
         // Creates the backing adapter for the ListView.
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(
+           SimpleCursorAdapter adapter = new SimpleCursorAdapter(
                 this,
                 R.layout.noteslist_item,
                 cursor,
-                new String[]{NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NAME_CREATE_DATE, NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE},
+                   new String[]{NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NAME_CREATE_DATE,                NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE},
                 new int[]{android.R.id.text1, R.id.text2, R.id.text3},
                 0
         ) {
@@ -248,36 +248,36 @@ README 文档：笔记应用功能概述
    ![image](https://github.com/user-attachments/assets/44cdf314-2308-4a4e-9800-980c736a6113)
 
 xml文件如下<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--  This is our one standard application action (creating a new note). -->
-    <item android:id="@+id/menu_add"
-          android:icon="@drawable/ic_menu_compose"
-          android:title="@string/menu_add"
-          android:alphabeticShortcut='a'
-          android:showAsAction="always" />
-    <item
-        android:id="@+id/action_sort_by_date"
-        android:title="Sort by Date"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
-    <item
-        android:id="@+id/action_change_color"
-        android:title="Change Background Color"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
-    <item
-        android:id="@+id/menu_search"
-        android:icon="@drawable/serach"
-        android:title="@string/menu_search"
-        android:alphabeticShortcut="s"
-        android:showAsAction="ifRoom|collapseActionView"
-        android:actionViewClass="android.widget.SearchView" />
-    <!--  If there is currently data in the clipboard, this adds a PASTE menu item to the menu
-          so that the user can paste in the data.. -->
-    <item android:id="@+id/menu_paste"
-          android:icon="@drawable/ic_menu_compose"
-          android:title="@string/menu_paste"
-          android:alphabeticShortcut='p' />
+   <menu xmlns:android="http://schemas.android.com/apk/res/android">
+       <!--  This is our one standard application action (creating a new note). -->
+       <item android:id="@+id/menu_add"
+             android:icon="@drawable/ic_menu_compose"
+             android:title="@string/menu_add"
+             android:alphabeticShortcut='a'
+             android:showAsAction="always" />
+       <item
+           android:id="@+id/action_sort_by_date"
+           android:title="Sort by Date"
+           android:orderInCategory="100"
+           android:showAsAction="never" />
+       <item
+           android:id="@+id/action_change_color"
+           android:title="Change Background Color"
+           android:orderInCategory="100"
+           android:showAsAction="never" />
+       <item
+           android:id="@+id/menu_search"
+           android:icon="@drawable/serach"
+           android:title="@string/menu_search"
+           android:alphabeticShortcut="s"
+           android:showAsAction="ifRoom|collapseActionView"
+           android:actionViewClass="android.widget.SearchView" />
+       <!--  If there is currently data in the clipboard, this adds a PASTE menu item to the menu
+             so that the user can paste in the data.. -->
+       <item android:id="@+id/menu_paste"
+             android:icon="@drawable/ic_menu_compose"
+             android:title="@string/menu_paste"
+             android:alphabeticShortcut='p' />
 </menu>
    技术栈
    编程语言：Java
