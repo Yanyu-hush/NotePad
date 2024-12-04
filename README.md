@@ -132,45 +132,45 @@ README 文档：笔记应用功能概述
    每条笔记都显示两个时间戳：
    创建时间戳：记录笔记创建的时间。
    修改时间戳：记录笔记最后被修改的时间。
-      private static final String[] PROJECTION = new String[] {
-      NotePad.Notes._ID, // 0
-      NotePad.Notes.COLUMN_NAME_TITLE, // 1
-      NotePad.Notes.COLUMN_NAME_CREATE_DATE, // 2
-      NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 3
-   };
+         private static final String[] PROJECTION = new String[] {
+         NotePad.Notes._ID, // 0
+         NotePad.Notes.COLUMN_NAME_TITLE, // 1
+         NotePad.Notes.COLUMN_NAME_CREATE_DATE, // 2
+         NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 3
+      };
 
-      /** The index of the title column */
-         private static final int COLUMN_INDEX_TITLE = 1;
-      private static final int COLUMN_INDEX_CREATE_DATE = 2;
-      private static final int COLUMN_INDEX_MODIFICATION_DATE = 3;
+         /** The index of the title column */
+            private static final int COLUMN_INDEX_TITLE = 1;
+         private static final int COLUMN_INDEX_CREATE_DATE = 2;
+         private static final int COLUMN_INDEX_MODIFICATION_DATE = 3;
 
-      /**
-       * onCreate is called when Android starts this Activity from scratch.
-         */
-      @Override
-      protected void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
+         /**
+          * onCreate is called when Android starts this Activity from scratch.
+            */
+         @Override
+         protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
 
-      // The user does not need to hold down the key to use menu shortcuts.
-      setDefaultKeyMode(DEFAULT_KEYS_SHORTCUT);
+         // The user does not need to hold down the key to use menu shortcuts.
+         setDefaultKeyMode(DEFAULT_KEYS_SHORTCUT);
 
-      /* If no data is given in the Intent that started this Activity, then this Activity
-        * was started when the intent filter matched a MAIN action. We should use the default
-        * provider URI.
-          */
-          // Gets the intent that started this Activity.
-          Intent intent = getIntent();
+         /* If no data is given in the Intent that started this Activity, then this Activity
+           * was started when the intent filter matched a MAIN action. We should use the default
+           * provider URI.
+             */
+             // Gets the intent that started this Activity.
+             Intent intent = getIntent();
 
-         // If there is no data associated with the Intent, sets the data to the default URI, which
-         // accesses a list of notes.
-         if (intent.getData() == null) {
-         intent.setData(NotePad.Notes.CONTENT_URI);
-         }
-
-      /*
-        * Sets the callback for context menu activation for the ListView. The listener is set
-        * to be this Activity. The effect is that context menus are enabled for items in the
-        * ListView, and the context menu is handled by a method in NotesList.
+            // If there is no data associated with the Intent, sets the data to the default URI, which
+            // accesses a list of notes.
+            if (intent.getData() == null) {
+            intent.setData(NotePad.Notes.CONTENT_URI);
+            }
+   
+         /*
+           * Sets the callback for context menu activation for the ListView. The listener is set
+           * to be this Activity. The effect is that context menus are enabled for items in the
+           * ListView, and the context menu is handled by a method in NotesList.
           */
           getListView().setOnCreateContextMenuListener(this);
 
