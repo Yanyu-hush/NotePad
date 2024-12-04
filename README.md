@@ -1,4 +1,4 @@
-README 文档：笔记应用功能概述
+![image](https://github.com/user-attachments/assets/7b484315-985d-439f-a15c-3fb227dfc695)README 文档：笔记应用功能概述
 
 
 功能
@@ -123,7 +123,10 @@ README 文档：笔记应用功能概述
 
         setListAdapter(adapter);
     }
-3. 时间戳显示
+  ![image](https://github.com/user-attachments/assets/17b1ccec-d158-4484-93b0-adeff24947bd)
+
+
+4. 时间戳显示
    每条笔记都显示两个时间戳：
    创建时间戳：记录笔记创建的时间。
    修改时间戳：记录笔记最后被修改的时间。
