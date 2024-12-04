@@ -9,9 +9,9 @@ README 文档：笔记应用功能概述
    删除笔记：用户可以从列表中删除不需要的笔记。
 2. 搜索功能
    按内容搜索：用户可以输入关键词，应用将搜索笔记内容中包含该关键词的所有笔记，并显示在搜索结果列表中。 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
+       @Override
+       public boolean onCreateOptionsMenu(Menu menu) {
+   
         // Inflate menu from XML resource
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.list_options_menu, menu);
@@ -35,31 +35,31 @@ README 文档：笔记应用功能概述
             }
         });
 
-        return super.onCreateOptionsMenu(menu);
-    }
-    private void filterNotesByQuery(String query) {
-    if (query == null || query.isEmpty()) {
-    // Show all notes
-    showAllNotes();
-    } else {
-    // Query the database for notes containing the search query
-    Cursor cursor = getContentResolver().query(
-    NotePad.Notes.CONTENT_URI,
-    PROJECTION,
-    NotePad.Notes.COLUMN_NAME_TITLE + " LIKE ?",
-    new String[]{"%" + query + "%"},
-    NotePad.Notes.DEFAULT_SORT_ORDER
-    );
+           return super.onCreateOptionsMenu(menu);
+       }
+       private void filterNotesByQuery(String query) {
+       if (query == null || query.isEmpty()) {
+       // Show all notes
+       showAllNotes();
+       } else {
+       // Query the database for notes containing the search query
+       Cursor cursor = getContentResolver().query(
+       NotePad.Notes.CONTENT_URI,
+       PROJECTION,
+       NotePad.Notes.COLUMN_NAME_TITLE + " LIKE ?",
+       new String[]{"%" + query + "%"},
+       NotePad.Notes.DEFAULT_SORT_ORDER
+       );
 
             // Update the adapter with the filtered cursor
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(
                     this,
                     R.layout.noteslist_item,
                     cursor,
-                    new String[]{NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NAME_CREATE_DATE, NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE},
+                    new String[]{NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NAME_CREATE_DATE,    NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE},
                     new int[]{android.R.id.text1, R.id.text2, R.id.text3},
                     0
-            ) {
+               ) {
                 @Override
                 public void bindView(View view, Context context, Cursor cursor) {
                     super.bindView(view, context, cursor);
