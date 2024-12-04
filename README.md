@@ -124,7 +124,9 @@ README 文档：笔记应用功能概述
         setListAdapter(adapter);
     }
   ![image](https://github.com/user-attachments/assets/17b1ccec-d158-4484-93b0-adeff24947bd)
+![image](https://github.com/user-attachments/assets/98254b81-455e-4061-80be-9f071a0af3d7)
 
+可以按内容搜索出对应的note
 
 4. 时间戳显示
    每条笔记都显示两个时间戳：
