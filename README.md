@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/7b484315-985d-439f-a15c-3fb227dfc695)README 文档：笔记应用功能概述
+README 文档：笔记应用功能概述
 
 
 功能
@@ -243,7 +243,8 @@
 
         // Sets the ListView's adapter to be the cursor adapter that was just created.
         setListAdapter(adapter);
-    }
+   ![image](https://github.com/user-attachments/assets/44cdf314-2308-4a4e-9800-980c736a6113)
+
 xml文件如下<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <!--  This is our one standard application action (creating a new note). -->
@@ -282,12 +283,18 @@ xml文件如下<?xml version="1.0" encoding="utf-8"?>
    数据库：SQLite
    用户界面：基于 Android XML 的布局和视图
 
-4. 拓展功能1：
+4. 拓展功能
+   ![image](https://github.com/user-attachments/assets/ae8fa345-4552-4cf1-a6c7-369cff4ebd89)
+
+   1：
 ### 更改背景颜色
 此功能允许用户通过在选项菜单中选择一个选项来随机更改应用的背景颜色。
+![image](https://github.com/user-attachments/assets/2cb129e1-50d8-4d96-9f99-b989a4247984)
 
 ### 按日期排序笔记
 用户可以使用选项菜单按日期排序他们的笔记。此功能允许根据笔记的创建或修改日期以降序显示笔记。
+![image](https://github.com/user-attachments/assets/35dbe5c4-3235-4651-aec2-6361aca03ce7)
+
 代码概况：
 <item
 android:id="@+id/action_sort_by_date"
